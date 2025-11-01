@@ -1,0 +1,137 @@
+/* 基本設定 (白背景・黒文字) */
+body {
+    background-color: #fff; 
+    color: #000; 
+    font-family: 'Roboto', -apple-system, sans-serif; 
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: block; 
+}
+
+/* ... (省略) ... */
+
+/* 時計モードの表示 */
+.mode-title {
+    font-size: 24px;
+    font-weight: 800; /* ★ 改善点3: タイトルを非常に太く */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.clock-display {
+    font-size: 80px;
+    text-align: center;
+    margin: 40px 0;
+    font-weight: 500; /* ★ 改善点3: 時刻表示を太く (500) */
+}
+
+/* スライドバーの太さ調整 */
+input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 10px; /* スライドバー本体を太く */
+    background: #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 28px; /* ★ 改善点2: つまみ部分を大きく */
+    width: 28px; 
+    border-radius: 50%;
+    background: #000;
+}
+
+/* iOS風トグルスイッチの配色反転 (改善点2: トグル式維持) */
+.toggle-switch {
+    /* ... (トグルスイッチの基本スタイルは維持) ... */
+    float: right;
+}
+.slider { background-color: #ccc; }
+input:checked + .slider { background-color: #000; }
+input:checked + .slider:before { background-color: #fff; }
+
+/* セグメントコントロールの配色反転 (言語切り替え) */
+/* ... (前回と同じ、ここではトグル式ではありません) ... */
+
+/* ストップウォッチのボタンデザイン */
+.control-button {
+    width: 130px; /* ★ 改善点1: 少し大きく */
+    height: 130px; /* ★ 改善点1: 少し大きく */
+    font-weight: 600;
+    background-color: #ddd; 
+    color: #000;
+}
+.control-button.stop {
+    background-color: #000;
+    color: #fff;
+}
+.control-button.gray-btn {
+    background-color: #ccc;
+    color: #000;
+}
+
+/* ★ 改善点1: 角丸アクションボタンの共通スタイル */
+.action-button {
+    padding: 10px 18px; /* 大きめのパディング */
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 12px; /* 角丸 */
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+/* アラームリストのスタイル */
+.alarm-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    border-bottom: 1px solid #ccc;
+    background-color: #f7f7f7;
+    border-radius: 12px;
+    margin-bottom: 8px;
+}
+
+.alarm-time {
+    font-size: 38px; /* 時刻を大きく */
+    font-weight: 500; /* ★ 改善点3: 時刻表示を太く (500) */
+}
+
+/* アラーム削除ボタンのスタイル */
+.delete-btn {
+    /* 共通アクションボタンのスタイルを適用 */
+    @extend .action-button; 
+    background-color: #fff; 
+    color: #000;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    padding: 8px 15px; /* トグルと並べるため少し調整 */
+}
+
+/* アラーム追加ボタンのスタイル */
+.add-button {
+    /* 共通アクションボタンのスタイルを適用 */
+    @extend .action-button;
+    background-color: #000;
+    color: #fff;
+    font-size: 18px;
+}
+
+/* 設定リストのボタンも角丸に調整 */
+.settings-list li {
+    background-color: #f7f7f7;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    border: none;
+    padding: 15px 10px;
+}
+
+.settings-list li:last-child {
+    border-bottom: none;
+}
